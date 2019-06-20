@@ -1,0 +1,54 @@
+{
+  "name": "Elasticsearch_FQDN_Analysis",
+  "author": "Vito Piserchia, Dreamlab Technologies AG",
+  "license": "AGPL-V3",
+  "url": "https://github.com/dreamlabtechnologies/",
+  "version": "1.0",
+  "description": "Search for IoCs in a Elasticsearch Instance",
+  "dataTypeList": ["fqdn"],
+  "command": "Elasticsearch/elk.py",
+  "baseConfig": "Elasticsearch",
+  "config": {
+     "service": "fqdn"
+  },
+  "configurationItems": [
+   {
+      "name": "endpoint",
+      "description": "Define the Elasticsearch endpoint",
+      "type": "string",
+      "multi": false,
+      "required": false,
+      "defaultValue": "http://127.0.0.1:9200"
+    },
+    {
+      "name": "index",
+      "description": "Define the Elasticsearch index to use",
+      "type": "string",
+      "multi": true,
+      "required": true
+    },
+    {
+      "name": "fqdn",
+      "description": "Define the field to query for FQDN IoCs",
+      "type": "string",
+      "multi": true,
+      "required": true
+    },
+    {
+      "name": "verifyssl",
+      "description": "Verify SSL certificate",
+      "type": "boolean",
+      "multi": false,
+      "required": true,
+      "defaultValue": true
+    },
+    {
+      "name": "cert_path",
+      "description": "Path to the CA on the system used to check server certificate",
+      "type": "string",
+      "multi": true,
+      "required": false
+    }
+  ]
+}
+
